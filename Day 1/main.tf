@@ -68,7 +68,7 @@ resource "aws_instance" "second_instance" {
 */
 
 # Day 2 - Practical 2 - Count and For Each
-resource "aws_instance" "count_instance" {
+/*resource "aws_instance" "count_instance" {
     count = 3
     ami = "ami-02dfbd4ff395f2a1b"
     instance_type = "t3.micro"
@@ -78,4 +78,20 @@ resource "aws_instance" "count_instance" {
       Name = "Terraform-Count-Instance-${count.index + 1}"
     }
 
+}*/
+
+resource "aws_instance" "Test" {
+    for_each = tomap ({
+      app = "t2.nano"
+      db = "t2.micro"
+      web = "t3.micro"
+    })    
+    ami = "ami-02dfbd4ff395f2a1b"
+    instance_type = each.value
+    key_name = "N Virginia Key"
+    vpc_security_group_ids = ["sg-0398e23bfa06598ce"]
+    tags = {
+      Name = each.key
+    }
+  
 }
