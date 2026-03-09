@@ -13,8 +13,8 @@ provider "aws" {
 }
 */
 
-# Day 2 - Create an Security Group 
-resource "aws_security_group" "Test-SG" {
+# Day 2 - Practical 1 - Create an Security Group and Include it in the EC2 instance
+/*resource "aws_security_group" "Test-SG" {
   name = "Terraform-SG"
   ingress  {
     description = "Allow SSH inbound traffic"
@@ -65,4 +65,17 @@ resource "aws_instance" "second_instance" {
     }
 
 }
+*/
 
+# Day 2 - Practical 2 - Count and For Each
+resource "aws_instance" "count_instance" {
+    count = 3
+    ami = "ami-02dfbd4ff395f2a1b"
+    instance_type = "t3.micro"
+    key_name = "N Virginia Key"
+    vpc_security_group_ids = ["sg-0398e23bfa06598ce"]
+    tags = {
+      Name = "Terraform-Count-Instance-${count.index + 1}"
+    }
+
+}
