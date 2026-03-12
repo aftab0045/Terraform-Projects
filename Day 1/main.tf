@@ -80,6 +80,7 @@ resource "aws_instance" "second_instance" {
 
 }*/
 
+/*
 resource "aws_instance" "Test" {
     for_each = tomap ({
       app = "t2.nano"
@@ -95,3 +96,30 @@ resource "aws_instance" "Test" {
     }
   
 }
+*/
+
+# Day 3 - Practical 1 - Default Variables
+/*
+resource "aws_instance" "variable_instance" {
+  ami = var.ami
+  instance_type = var.instance_type
+  key_name = "N Virginia Key"
+  vpc_security_group_ids = [var.SG]
+
+  tags = {
+    Name = "Terraform-Variable-Instance"
+  }
+
+}
+
+variable "ami" {
+  default = "ami-02dfbd4ff395f2a1b"
+}
+variable "instance_type" {
+  default = "t3.micro"
+}
+variable "SG" {
+  default = "sg-0398e23bfa06598ce"
+}*/
+
+# Day 3 - Practical 2 - Variable 
