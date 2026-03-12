@@ -123,6 +123,21 @@ variable "SG" {
 }*/
 
 # Day 3 - Practical 2 - Variable Files (variable.tf)
+/*
+resource "aws_instance" "variable_instance" {
+  ami = var.ami
+  instance_type = var.instance_type
+  key_name = "N Virginia Key"
+  vpc_security_group_ids = [var.SG]
+
+  tags = {
+    Name = "Terraform-Variable-Instance"
+  }
+
+}
+*/
+
+# Day 3 - Practical 3 - Override Variables (variable.auto.tfvars, variable.tfvars, variable.tf)
 resource "aws_instance" "variable_instance" {
   ami = var.ami
   instance_type = var.instance_type
