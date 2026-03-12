@@ -1,3 +1,4 @@
+# second preferred version of the code
 variable "ami" {
   default = "ami-02dfbd4ff395f2a1b"
 }

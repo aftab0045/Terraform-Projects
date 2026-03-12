@@ -138,6 +138,7 @@ resource "aws_instance" "variable_instance" {
 */
 
 # Day 3 - Practical 3 - Override Variables (variable.auto.tfvars, variable.tfvars, variable.tf)
+/*
 resource "aws_instance" "variable_instance" {
   ami = var.ami
   instance_type = var.instance_type
@@ -149,3 +150,29 @@ resource "aws_instance" "variable_instance" {
   }
 
 }
+*/
+
+# Day 3 - Practical 4 - User Data (Install Nginx Web Server)
+/*
+resource "aws_instance" "user_data_instance" {
+  ami = var.ami
+  instance_type = var.instance_type
+  key_name = "N Virginia Key"
+  vpc_security_group_ids = [var.SG]
+
+  tags = {
+    Name = "Terraform-User-Data-Instance"
+  }
+
+  user_data = <<-EOF
+              #!/bin/bash
+              sudo yum update -y
+              sudo yum install nginx -y
+              sudo systemctl start nginx
+              sudo systemctl enable nginx
+              cd /usr/share/nginx/html
+              echo "<h1>Welcome to Terraform User Data Instance</h1>" > index.html
+              EOF
+
+}
+*/
