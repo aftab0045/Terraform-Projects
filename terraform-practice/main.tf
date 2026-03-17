@@ -176,3 +176,16 @@ resource "aws_instance" "user_data_instance" {
 
 }
 */
+
+# Day 4 - Practical 1 (Resource creation )
+resource "aws_instance" "server" {
+  instance_type = "t2.micro"
+  key_name = "N Virginia Key"
+  ami = "ami-02dfbd4ff395f2a1b"
+
+  tags = {
+    Name = "server"
+  }
+}
+
+# 
