@@ -177,8 +177,8 @@ resource "aws_instance" "user_data_instance" {
 }
 */
 
-# Day 4 - Practical 1 (Resource creation )
-resource "aws_instance" "server" {
+# Day 4 - Practical 1 (Resource creation ) - Basic commands ch
+/*resource "aws_instance" "server" {
   instance_type = "t2.micro"
   key_name = "N Virginia Key"
   ami = "ami-02dfbd4ff395f2a1b"
@@ -195,5 +195,26 @@ resource "aws_instance" "second-server" {
 
   tags = {
     Name = "second-server"
+  }
+}*/
+
+# Day 4 - Practical 2 Data Blocks
+
+resource "aws_instance" "Data-server" {
+  instance_type = "t2.micro"
+  key_name = "N Virginia Key"
+  ami = "ami-02dfbd4ff395f2a1b"
+  vpc_security_group_ids = [data.aws_security_group.aws_sg.id]
+
+  tags = {
+    Name = "Data-server"
+  }
+  
+}
+
+data "aws_security_group" "aws_sg" {
+  filter {
+    name = "group-name"
+    values = ["launch-wizard-2"]
   }
 }
