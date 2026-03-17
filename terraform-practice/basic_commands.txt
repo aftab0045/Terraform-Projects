@@ -1,0 +1,38 @@
+1.terraform init
+👉 Initializes Terraform project by downloading providers and setting up backend.
+
+2.terraform plan
+👉 Shows execution plan (what Terraform will create/update/delete) without making changes.
+
+terraform apply
+👉 Applies the configuration and creates/updates infrastructure.
+
+terraform destroy
+👉 Deletes all resources managed by Terraform.
+
+terraform state list
+👉 Displays all resources currently tracked in Terraform state file.
+
+terraform state show <resource>
+👉 Shows detailed information about a specific resource from state file.
+
+terraform state mv <source> <destination>
+👉 Moves/renames a resource in the state file without recreating it.
+
+terraform state rm <resource> (not terraform rm ❌)
+👉 Removes a resource from state file without deleting actual infrastructure.
+
+terraform validate
+👉 Checks whether Terraform configuration syntax is valid.
+
+terraform fmt
+👉 Formats Terraform code into standard readable structure.
+
+terraform taint <resource>
+👉 Marks a resource to be destroyed and recreated in next apply.
+
+terraform import <resource> <id>
+👉 Imports existing infrastructure into Terraform state.
+
+terraform apply --auto-approve
+👉 Applies changes without asking for manual approval.
