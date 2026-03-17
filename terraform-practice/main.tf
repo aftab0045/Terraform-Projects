@@ -188,4 +188,12 @@ resource "aws_instance" "server" {
   }
 }
 
-# 
+resource "aws_instance" "second-server" {
+  instance_type = "t2.nano"
+  key_name = "N Virginia Key"
+  ami = "ami-02dfbd4ff395f2a1b"
+
+  tags = {
+    Name = "second-server"
+  }
+}
