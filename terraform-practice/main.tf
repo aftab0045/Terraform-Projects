@@ -200,7 +200,7 @@ resource "aws_instance" "second-server" {
 
 # Day 4 - Practical 2 Data Blocks
 
-resource "aws_instance" "Data-server" {
+/*resource "aws_instance" "Data-server" {
   instance_type = "t2.micro"
   key_name = "N Virginia Key"
   ami = "ami-02dfbd4ff395f2a1b"
@@ -218,3 +218,4 @@ data "aws_security_group" "aws_sg" {
     values = ["launch-wizard-2"]
   }
 }
+*/
