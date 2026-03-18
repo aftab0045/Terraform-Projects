@@ -219,3 +219,8 @@ data "aws_security_group" "aws_sg" {
   }
 }
 */
+
+# Day 5 - Practical 1 - Modules (main.tf, variable.tf, output.tf)
+module "EC2" {
+  source = "./modules/EC2"
+}
