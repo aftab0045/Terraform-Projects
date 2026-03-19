@@ -21,7 +21,7 @@ resource "aws_instance" "module_instance" {
         connection {
             type = "ssh"
             user = "ec2-user"
-            private_key = file("C:/Downloads/N Virginia Key.pem")
+            private_key = file("C:\\Users\\DELL\\Downloads\\N Virginia Key.pem")
             host = self.public_ip
         }
     }
